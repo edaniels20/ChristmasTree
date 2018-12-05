@@ -1,8 +1,16 @@
 var lights = document.getElementsByTagName("span");
 var timer;
-changeLight();
+alert("Click the page for audio")
+
 
 window.onload = startTimer();
+setTimeout(function() {
+    var newAudio = new Audio("Song.mp3");
+    newAudio.volume = .16;
+    newAudio.currentTime = 32;
+    newAudio.play();
+    changeLight();
+}, 1000);
 
 function startTimer() {
     timer = setInterval(changeLight, 1000);
