@@ -1,6 +1,7 @@
 var lights = document.getElementsByTagName("span");
 var timer;
-
+var landing = document.getElementById("landingWrapper");
+var tree = document.getElementById("treeWrapper");
 
 window.onload = startTimer();
 document.addEventListener('click', playButton)
@@ -12,6 +13,8 @@ function playButton() {
         newAudio.play();
         changeLight();
         document.removeEventListener("click", playButton)
+        landing.style.display = "none";
+        tree.style.display = "block";
 }
 
 function startTimer() {
