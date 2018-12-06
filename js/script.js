@@ -3,14 +3,15 @@ var timer;
 
 
 window.onload = startTimer();
-function play() {
-    var playButton = document.getElementById("playButton");
-    playButton.innerHTML = "";
+document.addEventListener('click', playButton)
+
+function playButton() {
     var newAudio = new Audio("Song.mp3");
-    newAudio.volume = .16;
-    newAudio.currentTime = 32;
-    newAudio.play();
-    changeLight();
+        newAudio.volume = .16;
+        newAudio.currentTime = 32;
+        newAudio.play();
+        changeLight();
+        document.removeEventListener("click", playButton)
 }
 
 function startTimer() {
@@ -18,7 +19,6 @@ function startTimer() {
 }
 
 function changeLight() {
-    console.log("dab")
     for (i in lights) {
         if (lights[i].className === "redLight") {
             lights[i].className = "blueLight";
